@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model implements HasMedia
@@ -18,7 +18,7 @@ class Product extends Model implements HasMedia
     {
         parent::boot();
         static::creating(function($product){
-        	$product->slug = str_slug($product->title);
+        	$product->slug = Str::slug($product->title);
         });
     }
    	
