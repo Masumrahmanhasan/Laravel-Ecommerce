@@ -1,4 +1,6 @@
-<div class="row">  
+
+<div class="container">
+    <div class="row">  
       <div id="brand_carouse" class="owl-carousel brand-logo">
         <div class="item text-center"> <a href="#"><img src="image/brand/brand1.png" alt="Disney" class="img-responsive" /></a> </div>
         <div class="item text-center"> <a href="#"><img src="image/brand/brand2.png" alt="Dell" class="img-responsive" /></a> </div>
@@ -11,9 +13,5 @@
         <div class="item text-center"> <a href="#"><img src="image/brand/brand9.png" alt="Canon" class="img-responsive" /></a> </div>
         <div class="item text-center"> <a href="#"><img src="image/brand/brand5.png" alt="Canon" class="img-responsive" /></a> </div>
       </div>
-    <div class="cms_banner ">
-      <div class="col-md-4 cms-banner-left"> <a href="#"><img alt="#" src="image/banners/subbanner1.jpg"></a> </div>
-      <div class="col-md-4 cms-banner-middle"><a href="#"> <img alt="#" src="image/banners/subbanner2.jpg"></a></div>
-      <div class="col-md-4 cms-banner-right"> <a href="#"><img alt="#" src="image/banners/subbanner3.jpg"></a> </div>
-    </div>
+</div>
 </div>
