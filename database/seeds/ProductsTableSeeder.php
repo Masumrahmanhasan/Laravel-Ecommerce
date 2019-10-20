@@ -16,7 +16,7 @@ class ProductsTableSeeder extends Seeder
     	$products = Product::select('id')->get();
     	foreach ($products as $product)
     	{
-    		$product->addMediaFromUrl('https://lorempixel.com/640/480/?45083')
+    		$product->addMediaFromUrl('https://lorempixel.com/640/480/?86839')
    					->toMediaCollection('products');
     	}
     }
