@@ -32,21 +32,24 @@
               <div class="item">
                 <div class="product-thumb transition">
 
-                  <div class="image product-imageblock"> <a href="#">
-                    <img class="img-responsive" src="{{ $product->getFirstMediaUrl('products') }}" alt="{{ $product->title }}" title="{{ $product->title }}"/> </a>
+                  <div class="image product-imageblock">
+                    <a href="{{ route('product.details', $product->slug) }}">
+                      <img class="img-responsive" src="{{ $product->getFirstMediaUrl('products') }}" alt="{{ $product->title }}" title="{{ $product->title }}"/>
+                    </a>
 
                     <div class="button-group">
                       <button type="button" class="addtocart-btn" >Add To Cart</button>
                     </div>
                   </div>
                   <div class="caption product-detail">
-                    <h4 class="product-name"><a href="#" title="{{ $product->title }}">{{ $product->title }}</a></h4>
+                    <h4 class="product-name"><a href="{{ route('product.details', $product->slug) }}" title="{{ $product->title }}">{{ $product->title }}</a></h4>
 
                     <p class="price product-price">BDT {{ $product->price }}</p>
                     
                   </div>
                 </div>
               </div>
+
               @endforeach
               
 
@@ -55,7 +58,7 @@
         </div>
         <!-- tab-latest-->
 
-        <div id="tab-special" class="tab-content">
+        {{-- <div id="tab-special" class="tab-content">
           <div class="box">
             <div id="special-slidertab" class="row owl-carousel product-slider">
               <div class="item">
@@ -180,9 +183,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
         <!-- tab-special-->
-        <div id="tab-bestseller" class="tab-content">
+        {{-- <div id="tab-bestseller" class="tab-content">
           <div class="box">
             <div id="bestseller-slidertab" class="row owl-carousel product-slider">
               <div class="item">
@@ -287,7 +290,8 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> --}}
+        
       </div>
       <div class="parallax">
         <ul id="testimonial" class="row owl-carousel product-slider">

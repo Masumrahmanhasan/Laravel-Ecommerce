@@ -76,7 +76,7 @@
       </div>
       <div class="col-sm-4 col-xs-12 header-middle">
         <div class="header-middle-top">
-          <div id="logo"> <a href="index.html"><img src="image/logo.png" title="E-Commerce" alt="E-Commerce" class="img-responsive" /></a> </div>
+          <div id="logo"> <a href="index.html"><img src="{{ asset('image/logo.png') }}" title="E-Commerce" alt="E-Commerce" class="img-responsive" /></a> </div>
         </div>
       </div>
       <div class="col-sm-4 col-xs-12 header-right">
