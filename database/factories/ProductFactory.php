@@ -11,6 +11,7 @@ $factory->define(Product::class, function (Faker $faker) {
         'category_id' => Category::all()->random()->id,
         'title' => $faker->text(25),
         'description' => $faker->realText(),
-        'price' => $faker->numberBetween(100, 1000),
+        'price' => random_int(100, 1000),
+        'sell_price' => random_int(0, 1000),
     ];
 });
