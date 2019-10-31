@@ -11,9 +11,14 @@
 |
 */
 Route::group(['namespace' => 'Frontend'], function() {
+	
 	Route::get('/', 'HomeController@showHomePage')->name('frontend.home');
 	Route::get('/product/{slug}', 'ProductController@showDetails')->name('product.details');
+
+	//cart section
 	Route::get('/cart','CartController@showCart')->name('cart.show');
 	Route::post('/cart','CartController@addToCart')->name('cart.add');
+	Route::post('/cart/remove','CartController@removeFromCart')->name('cart.remove');
+	Route::get('/cart/clear','CartController@clearCart')->name('cart.clear');
 
 });

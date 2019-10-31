@@ -229,12 +229,17 @@
           <div id="product">
             <div class="form-group">
               <label class="control-label qty-label" for="input-quantity">Qty</label>
-              <input type="text" name="quantity" value="1" size="2" id="input-quantity" class="form-control productpage-qty" />
+              <input type="text" name="quantity" value="{{ $cart[$product->id]['quantity'] ?? '1' }}" size="2" id="input-quantity" class="form-control productpage-qty" />
               <input type="hidden" name="product_id" value="48" />
               <div class="btn-group">
-                <button type="button" data-toggle="tooltip" class="btn btn-default wishlist" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button>
-                <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg btn-block addtocart">Add to Cart</button>
-                <button type="button" data-toggle="tooltip" class="btn btn-default compare" title="Compare this Product" ><i class="fa fa-exchange"></i></button>
+                {{-- <button type="button" data-toggle="tooltip" class="btn btn-default wishlist" title="Add to Wish List" ><i class="fa fa-heart-o"></i></button> --}}
+
+                <form action="{{ route('cart.remove') }}" method="POST">
+                  @csrf
+                  <input type="hidden" name="product_id" value="{{ $product->id }}">
+                  <button type="submit" id="button-cart" data-loading-text="Loading..." class="btn btn-primary btn-lg addtocart">Add to Cart</button>
+                </form>
+
               </div>
             </div>
           </div>

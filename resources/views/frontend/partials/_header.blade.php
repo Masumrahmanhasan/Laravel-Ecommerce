@@ -82,17 +82,20 @@
       <div class="col-sm-4 col-xs-12 header-right">
         <div id="cart" class="btn-group btn-block">
           <button type="button" class="btn btn-inverse btn-block btn-lg dropdown-toggle cart-dropdown-button"> <span id="cart-total"><span class="cart-title">Shopping Cart</span><br>
-          0 item(s) - $0.00</span> </button>
+          {{ $count }} item(s) - ${{ $total }}</span> </button>
           <ul class="dropdown-menu pull-right cart-dropdown-menu">
             <li>
               <table class="table table-striped">
                 <tbody>
                   <tr>
-                    <td class="text-center"><a href="#"><img class="img-thumbnail" title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" src="image/product/7product50x59.jpg"></a></td>
+                    <td class="text-center"><a href="#"><img class="img-thumbnail" title="cart" alt="cart" src="{{ asset('image/cart.png') }}"></a></td>
                     <td class="text-left"><a href="#">lorem ippsum dolor dummy</a></td>
                     <td class="text-right">x 1</td>
-                    <td class="text-right">$254.00</td>
-                    <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button"><i class="fa fa-times"></i></button></td>
+                    <td class="text-right">{{ $total }}</td>
+                    <td class="text-center">
+                      <button class="btn btn-danger btn-xs" title="Remove" type="button"><i class="fa fa-times"></i>
+                      </button>
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -115,11 +118,11 @@
                     </tr>
                     <tr>
                       <td class="text-right"><strong>Total</strong></td>
-                      <td class="text-right">$254.00</td>
+                      <td class="text-right">${{ $total }}</td>
                     </tr>
                   </tbody>
                 </table>
-                <p class="text-right"> <span class="btn-viewcart"><a href="cart.html"><strong><i class="fa fa-shopping-cart"></i> View Cart</strong></a></span> <span class="btn-checkout"><a href="checkout.html"><strong><i class="fa fa-share"></i> Checkout</strong></a></span> </p>
+                <p class="text-right"> <span class="btn-viewcart"><a href="{{ route('cart.show') }}"><strong><i class="fa fa-shopping-cart"></i> View Cart</strong></a></span> <span class="btn-checkout"><a href="checkout.html"><strong><i class="fa fa-share"></i> Checkout</strong></a></span> </p>
               </div>
             </li>
           </ul>

@@ -37,7 +37,7 @@
                   </a>
 
                   <div class="button-group">
-                    <form action="{{ route('cart.add') }}" @method('POST')>
+                    <form action="{{ route('cart.add') }}" method="POST">
                       @csrf
                       <input type="hidden" name="product_id" value="{{ $product->id }}">
                       <button type="submit" class="addtocart-btn">Add To Cart</button>
@@ -48,6 +48,7 @@
                   <h4 class="product-name"><a href="{{ route('product.details', $product->slug) }}" title="{{ $product->title }}">{{ $product->title }}</a></h4>
 
                   <p class="price product-price">
+
                     @if ($product->sell_price != null && $product->sell_price > 0)
                     <strike>BDT {{ $product->price }}</strike> BDT {{ $product->sell_price }}
                     @else

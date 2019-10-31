@@ -10,7 +10,10 @@ class ProductController extends Controller
 {
 	public function showDetails($slug)
 	{
-		$data['product'] = Product::where('slug', $slug)->where('active', 1)->first();
+		$data['cart'] 		= session()->has('cart') ? session()->get('cart') : [];
+		$data['count'] 		= count($data['cart']);
+		$data['total'] 		= array_sum(array_column($data['cart'], 'total_price'));
+		$data['product'] 	= Product::where('slug', $slug)->where('active', 1)->first();
 
 		if ($data['product'] === null) 
 		{
