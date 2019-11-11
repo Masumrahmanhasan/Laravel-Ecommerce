@@ -1,0 +1,21 @@
+.custom{
+		font-size: 16px;
+		color: #000;
+		border-bottom: 1px solid #000;
+		padding: 0 0 20px;
+		font-weight: 500;
+		text-transform: uppercase;
+		border-color: #000;
+}
+.bs-callout {
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+}
+.bs-callout-info {
+    background-color: #f4f8fa;
+    border-color: #5bc0de;
+}
+.bs-callout-info h4 {
+    color: #5bc0de;
+}

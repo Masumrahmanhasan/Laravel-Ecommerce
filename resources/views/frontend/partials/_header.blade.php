@@ -41,16 +41,16 @@
                   <li class="dropdown account"><a href="#" title="My Account" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user"></i><span>My Account</span><span class="caret"></span></a>
                     <ul class="dropdown-menu dropdown-menu-right">
                     <li><a href="">My Profile</a></li>
-                    <li><a href="">Logout</a></li>
+                    <li><a href="{{ route('logout') }}">Logout</a></li>
                   </ul>
                 </li>
                 @endauth
                 
                 @guest()
-                <li class="dropdown account"><a href="#" title="Login" class="dropdown-toggle" data-toggle="dropdown">Login</a>
+                <li><a href="{{ route('login.view') }}" title="Login">Login</a>
                 </li>
 
-                <li class="dropdown account"><a href="#" title="Register" class="dropdown-toggle" data-toggle="dropdown">Register</a>
+                <li><a href="{{ route('register.view') }}" title="Register">Register</a>
                 </li>
 
                 @endguest
@@ -70,13 +70,13 @@
       <div class="col-sm-4 col-xs-6 header-left">
         <div class="shipping">
           <div class="shipping-img"></div>
-          <div class="shipping-text">(+91) 000-1233<br>
+          <div class="shipping-text">(+880) 1955-945052<br>
             <span class="shipping-detail">24/7 Online Support</span></div>
         </div>
       </div>
       <div class="col-sm-4 col-xs-12 header-middle">
         <div class="header-middle-top">
-          <div id="logo"> <a href="index.html"><img src="{{ asset('image/logo.png') }}" title="E-Commerce" alt="E-Commerce" class="img-responsive" /></a> </div>
+          <div id="logo"> <a href="{{ route('frontend.home') }}"><img src="{{ asset('image/logo.png') }}" title="E-Commerce" alt="E-Commerce" class="img-responsive" /></a> </div>
         </div>
       </div>
       <div class="col-sm-4 col-xs-12 header-right">
@@ -104,25 +104,19 @@
               <div>
                 <table class="table table-bordered">
                   <tbody>
+                    @foreach ($cart as $item)                   
                     <tr>
-                      <td class="text-right"><strong>Sub-Total</strong></td>
-                      <td class="text-right">$210.00</td>
+                      <td class="text-right"><strong>{{ $item['title'] }}</strong></td>
+                      <td class="text-right">BDT {{ number_format($item['total_price'], 2) }}</td>
                     </tr>
-                    <tr>
-                      <td class="text-right"><strong>Eco Tax (-2.00)</strong></td>
-                      <td class="text-right">$2.00</td>
-                    </tr>
-                    <tr>
-                      <td class="text-right"><strong>VAT (20%)</strong></td>
-                      <td class="text-right">$42.00</td>
-                    </tr>
+                    @endforeach
                     <tr>
                       <td class="text-right"><strong>Total</strong></td>
-                      <td class="text-right">${{ $total }}</td>
+                      <td class="text-right">${{ number_format($total, 2) }}</td>
                     </tr>
                   </tbody>
                 </table>
-                <p class="text-right"> <span class="btn-viewcart"><a href="{{ route('cart.show') }}"><strong><i class="fa fa-shopping-cart"></i> View Cart</strong></a></span> <span class="btn-checkout"><a href="checkout.html"><strong><i class="fa fa-share"></i> Checkout</strong></a></span> </p>
+                <p class="text-right"> <span class="btn-viewcart"><a href="{{ route('cart.show') }}"><strong><i class="fa fa-shopping-cart"></i> View Cart</strong></a></span> <span class="btn-checkout"><a href="{{ route('checkout') }}"><strong><i class="fa fa-share"></i> Checkout</strong></a></span> </p>
               </div>
             </li>
           </ul>

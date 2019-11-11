@@ -12,7 +12,8 @@
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
         "laravel/tinker": "^1.0",
-        "spatie/laravel-medialibrary": "^7.14"
+        "spatie/laravel-medialibrary": "^7.14",
+        "symfony/console": "4.3.4"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

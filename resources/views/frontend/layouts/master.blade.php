@@ -14,6 +14,8 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.carousel.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('css/owl.transitions.css') }}">
+
+<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
 {{-- Jquery scripts --}}
 <script type="text/javascript" src="{{ asset('js/jquery-2.1.1.min.js') }}"></script>
 
@@ -22,11 +24,7 @@
 </head>
 <body>
 
-  {{-- Preloader Start--}}
-  <div class="preloader loader" style="display: block; background:#f2f2f2;">
-    <img src="{{ asset('image/loader.gif') }}"  alt="#"/>
-  </div>
-  {{-- Preloader End --}}
+  @yield('preloader')
 
   @include('frontend.partials._header') 
   

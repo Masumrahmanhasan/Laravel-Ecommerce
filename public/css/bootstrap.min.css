@@ -4700,7 +4700,8 @@ a.thumbnail:hover,a.thumbnail:focus,a.thumbnail.active {
 .alert {
     padding: 11px;
     margin-bottom: 20px;
-    border: 1px solid transparent;    
+    border: 1px solid transparent;
+    border-radius: 4px; 
 }
 
 .alert h4 {
@@ -4732,9 +4733,9 @@ a.thumbnail:hover,a.thumbnail:focus,a.thumbnail.active {
 }
 
 .alert-success {
-    background-color: #efefef;
-    border-color: #dbdee1;
-    color: #39AAB0;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #3c763d;
 }
 
 .alert-success hr {
