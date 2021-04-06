@@ -14,6 +14,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "spatie/laravel-medialibrary": "^7.14",
+        "spatie/laravel-permission": "^4.0",
         "symfony/console": "5.0.*"
     },
     "require-dev": {
