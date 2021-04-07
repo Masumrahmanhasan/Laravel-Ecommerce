@@ -40,12 +40,12 @@
               <div class="product-thumb transition">
 
                 <div class="image product-imageblock">
-                  <a href="{{ route('product.details', $product->slug) }}">
+                  <a href="{{ route('frontend.product.details', $product->slug) }}">
                     <img class="img-responsive" src="{{ $product->getFirstMediaUrl('products') }}" alt="{{ $product->title }}" title="{{ $product->title }}"/>
                   </a>
 
                   <div class="button-group">
-                    <form action="{{ route('cart.add') }}" method="POST">
+                    <form action="{{ route('frontend.cart.add') }}" method="POST">
                       @csrf
                       <input type="hidden" name="product_id" value="{{ $product->id }}">
                       <button type="submit" class="addtocart-btn">Add To Cart</button>
@@ -53,7 +53,7 @@
                   </div>
                 </div>
                 <div class="caption product-detail">
-                  <h4 class="product-name"><a href="{{ route('product.details', $product->slug) }}" title="{{ $product->title }}">{{ $product->title }}</a></h4>
+                  <h4 class="product-name"><a href="{{ route('frontend.product.details', $product->slug) }}" title="{{ $product->title }}">{{ $product->title }}</a></h4>
 
                   <p class="price product-price">
 
@@ -62,29 +62,29 @@
                     @else
                     BDT {{ $product->price }}
                     @endif
-                    
+
                   </p>
-                  
+
                 </div>
               </div>
             </div>
 
             @endforeach
-            
+
 
           </div>
         </div>
       </div>
       {{-- tab latest  --}}
-      
+
     </div>
 
     @include('frontend.partials._testimonials')
     @include('frontend.partials._featured')
     @include('frontend.partials._blogs')
 
-    
-    
+
+
   </div>
 </div>
 <div id="subbanner4" class="banner" >

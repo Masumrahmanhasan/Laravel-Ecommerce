@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Product;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
@@ -12,9 +12,9 @@ class ProductController extends Controller
 	{
 		$data['product'] 	= Product::where('slug', $slug)->where('active', 1)->first();
 
-		if ($data['product'] === null) 
+		if ($data['product'] === null)
 		{
-			return redirect()->route('frontend.home');		
+			return redirect()->route('frontend.home');
 		}
 
 		return view('frontend.products.details', $data);

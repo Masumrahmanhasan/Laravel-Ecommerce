@@ -61,7 +61,7 @@
             <td class="text-right">BDT {{ number_format($item['total_price'], 2) }}</td>
 
             <td class="text-center">
-              <form action="{{ route('cart.remove') }}" method="POST">
+              <form action="{{ route('frontend.cart.remove') }}" method="POST">
                 @csrf
                 <input type="hidden" name="product_id" value="{{ $key }}">
                 <button type="submit" class="btn btn-primary btn-lg">Remove</button>
@@ -95,10 +95,10 @@
     <div class="buttons">
       <div class="pull-left">
         <a class="btn btn-default" href="{{ route('frontend.home') }}">Continue Shopping</a>
-        <a class="btn btn-default" href="{{ route('cart.clear') }}">Clear Cart</a>
+        <a class="btn btn-default" href="{{ route('frontend.cart.clear') }}">Clear Cart</a>
       </div>
 
-      <div class="pull-right"><a class="btn btn-primary" href="{{ route('checkout') }}">Checkout</a></div>
+      <div class="pull-right"><a class="btn btn-primary" href="{{ route('frontend.checkout') }}">Checkout</a></div>
     </div>
   </div>
 </div>

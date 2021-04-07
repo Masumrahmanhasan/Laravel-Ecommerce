@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Category;
+use App\Models\Category;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
@@ -31,6 +31,6 @@ class AppServiceProvider extends ServiceProvider
             $categories = Category::select(['name', 'slug'])->where('parent_category_id', null)->get();
             View::share('categories', $categories);
         }
-        
+
     }
 }

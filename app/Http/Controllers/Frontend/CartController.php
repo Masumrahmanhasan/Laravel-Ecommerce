@@ -4,15 +4,15 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Product;
-use App\Order;
+use App\Models\Product;
+use App\Models\Order;
 use Illuminate\Support\Facades\Validator;
 
 class CartController extends Controller
 {
 	public function showCart()
 	{
-		
+//		dd(session()->get('cart'));
 		return view('frontend.cart.cart');
 	}
 
@@ -28,9 +28,8 @@ class CartController extends Controller
 		}
 
 		$product = Product::findOrFail($request->input('product_id'));
-		$unit_price = ($product->sell_price !== null && $product->sell_price > 0) ? 
+		$unit_price = ($product->sell_price !== null && $product->sell_price > 0) ?
 		$product->sell_price : $product->price;
-
 		$cart = session()->has('cart') ? session()->get('cart') : [];
 
 		//if products exists then increment quantity...
@@ -51,7 +50,7 @@ class CartController extends Controller
 
 		session(['cart' => $cart]);
 		session()->flash('success', 'Product added to cart successfully');
-		return redirect()->route('cart.show');
+		return redirect()->route('frontend.cart.show');
 
 	}
 	public function removeFromCart(Request $request)
@@ -65,7 +64,7 @@ class CartController extends Controller
 			return redirect()->back();
 		}
 		$cart = session()->has('cart') ? session()->get('cart') : [];
-		
+
 		unset($cart[$request->input('product_id')]);
 
 		session(['cart' => $cart]);
@@ -81,12 +80,12 @@ class CartController extends Controller
 			session(['cart' => []]);
 			session()->flash('success', 'Your cart has been cleared');
 		}
-		
+
 		return redirect()->back();
 	}
 
 	public function checkout()
-	{	
+	{
 		return view('frontend.checkout');
 	}
 
