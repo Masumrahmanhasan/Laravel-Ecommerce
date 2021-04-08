@@ -1,6 +1,11 @@
 <?php
+
 // Auth Routes
 Auth::routes();
+
+Route::get('/hello', function(){
+	dd(app_name());
+});
 
 // Frontend routes
 Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function() {
