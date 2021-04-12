@@ -1,10 +1,11 @@
 <?php
+use App\Models\User;
 
 // Auth Routes
 Auth::routes();
 
 Route::get('/hello', function(){
-	dd(app_name());
+	dd(User::with('roles')->get());
 });
 
 // Frontend routes
@@ -37,7 +38,9 @@ Route::group(['namespace' => 'Frontend', 'as' => 'frontend.'], function() {
 
 // Admin Routes
 Route::group(['namespace' => 'Admin', 'as' => 'admin.', 'prefix' => 'admin'], function() {
-	Route::View('dashboard', 'admin.dashboard.dashboard');
+	Route::get('dashboard', function() {
+		return view('admin.dashboard.dashboard');
+	})->name('dashboard');
 	Route::resource('category', 'CategoryController');
 	Route::resource('product', 'ProductController');
 });

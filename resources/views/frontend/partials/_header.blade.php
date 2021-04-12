@@ -41,9 +41,23 @@
                                     <li class="dropdown account"><a href="#" title="My Account" class="dropdown-toggle" data-toggle="dropdown"> <i class="fa fa-user"></i><span>My Account</span><span class="caret"></span></a>
                                         <ul class="dropdown-menu dropdown-menu-right">
                                             <li><a href="">My Profile</a></li>
-                                            <li><a href="{{ route('logout') }}">Logout</a></li>
+                                            <li>
+                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                             document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </li>
+                                            @can('view backend')
+                                                <li><a href="{{ route('admin.dashboard')}}">Admin Dashboard</a></li>
+                                            @endcan
                                         </ul>
                                     </li>
+
                                 @else
                                     <li>
                                         <a href="{{ route('login') }}" title="Login">Login</a>

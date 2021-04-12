@@ -19,3 +19,17 @@
 .bs-callout-info h4 {
     color: #5bc0de;
 }
+
+.invalid-feedback {
+	display: block;
+	width: 100%;
+	margin-top: 0.25rem;
+	font-size: 80%;
+	color: #dc3545;
+}
+
+.is-invalid {
+	border-color: #dc3545;
+	background-image: none;
+	color: #dc3545;
+}
